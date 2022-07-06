@@ -1,0 +1,38 @@
+{
+    "name": "macos-ui-snippets",
+    "displayName": "macos_ui_snippets",
+    "description": "macos_ui Flutter snippets",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "version": "0.0.1",
+    "author": {
+        "name": "GroovinChip",
+        "email": "groovinchip@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GroovinChip/macos-ui-snippets"
+    },
+    "bugs": {
+        "url": "https://github.com/GroovinChip/macos-ui-snippets/issues",
+        "email": "groovinchip@gmail.com"
+    },
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "keywords": [
+        "flutter",
+        "dart",
+        "macos_ui"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "dart",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

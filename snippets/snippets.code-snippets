@@ -1,0 +1,301 @@
+{
+    "import macos_ui": {
+        "prefix": "imui",
+        "description": "Import macos_ui",
+        "body": [
+            "import 'package:flutter/cupertino.dart';",
+            "import 'package:macos_ui/macos_ui.dart';"
+        ]
+    },
+    "Create a new MacosApp": {
+        "prefix": "muiapp",
+        "description": "Create a new MacosApp",
+        "body": [
+            "MacosApp(",
+            "  theme: MacosThemeData.light(),",
+            "  darkTheme: MacosThemeData.dark(),",
+            "  themeMode: ThemeMode.system,",
+            "  home: ${1:},",
+            "),"
+        ]
+    },
+    "Create a new MacosApp within a Widget": {
+        "prefix": "muiappw",
+        "description": "Create a new MacosApp within a Widget",
+        "body": [
+            "class ${1:} extends StatelessWidget {",
+            "  const ${1:}({super.key});\n",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return MacosApp(",
+            "      theme: MacosThemeData.light(),",
+            "      darkTheme: MacosThemeData.dark(),",
+            "      themeMode: ThemeMode.system,",
+            "      home: ${2:},",
+            "    );",
+            "  }",
+            "}"
+        ]
+    },
+    "Create a new MacosWindow": {
+        "prefix": "muiwin",
+        "description": "Create a new MacosWindow",
+        "body": [
+            "MacosWindow(",
+            "  child: ${0:}",
+            "),"
+        ]
+    },
+    "Create a new MacosWindow with Sidebar": {
+        "prefix": "muiwins",
+        "description": "Create a new MacosWindow with Sidebar",
+        "body": [
+            "class ${1:} extends StatefulWidget {",
+            "  const ${1:}({super.key});\n",
+            "  @override",
+            "  State<${1:}> createState() => _${1:}State();",
+            "}\n",
+            "class _${1:}State extends State<${1:}> {",
+            "  int pageIndex = 0;",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return MacosWindow(",
+            "      sidebar: Sidebar(",
+            "        minWidth: ${2:200},",
+            "        startWidth: ${3:200},",
+            "        builder: (context, scrollController) {",
+            "          return SidebarItems(",
+            "            currentIndex: pageIndex,",
+            "            onChanged: (i) => setState(() => pageIndex = i),",
+            "            scrollController: scrollController,",
+            "            items: [",
+            "              SidebarItem(",
+            "                leading: MacosIcon(CupertinoIcons.${5:}),",
+            "                label: Text('${6:}'),",
+            "              ),",
+            "            ],",
+            "          );",
+            "        },",
+            "      ),",
+            "      child: IndexedStack(",
+            "        index: pageIndex,",
+            "        children: [",
+            "          ${7:MacosScaffold()},",
+            "        ],",
+            "      ),",
+            "    );",
+            "  }",
+            "}"
+        ]
+    },
+    "Create a new MacosScaffold": {
+        "prefix": "muiscaf",
+        "description": "Create a new MacosScaffold",
+        "body": [
+            "MacosScaffold(",
+            "  children: [",
+            "    ContentArea(",
+            "      builder: (context, scrollController) {",
+            "        return ${1:const SizedBox.shrink()};",
+            "      },",
+            "    ),",
+            "  ],",
+            "),"
+        ]
+    },
+    "Create a new MacosScaffold within a widget": {
+        "prefix": "muiScafW",
+        "description": "Create a new MacosScaffold within a Widget",
+        "body": [
+            "class ${1:} extends StatelessWidget {",
+            "  const ${1:}({super.key});\n",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return MacosScaffold(",
+            "      children: [",
+            "        ContentArea(",
+            "          builder: (context, scrollController) {",
+            "            return ${2:const SizedBox.shrink()};",
+            "          },",
+            "        ),",
+            "      ],",
+            "    );",
+            "  }",
+            "}"
+        ]
+    },
+    "Create a new MacosScaffold with a Toolbar": {
+        "prefix": "muiScafT",
+        "description": "Create a new MacosScaffold with a Toolbar",
+        "body": [
+            "MacosScaffold(",
+            "  toolBar: ToolBar(",
+            "    title: Text('${1:'}",
+            "  ),",
+            "  children: [",
+            "    ContentArea(",
+            "      builder: (context, scrollController) {",
+            "        return ${2:const SizedBox.shrink();}",
+            "      },",
+            "    ),",
+            "  ],",
+            "),"
+        ]
+    },
+    "Create a new MacosScaffold with a Toolbar within a widget": {
+        "prefix": "muiScafTW",
+        "description": "Create a new MacosScaffold with a Toolbar within a Widget",
+        "body": [
+            "class ${1:} extends StatelessWidget {",
+            "  const ${1:}({super.key});\n",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return MacosScaffold(",
+            "      toolBar: ToolBar(",
+            "        title: Text('${2:}')",
+            "      ),",
+            "      children: [",
+            "        ContentArea(",
+            "          builder: (context, scrollController) {",
+            "            return ${3:const SizedBox.shrink()};",
+            "          },",
+            "        ),",
+            "      ],",
+            "    );",
+            "  }",
+            "}"
+        ]
+    },
+    "Create a new ResizablePane with a right-resizable side": {
+        "prefix": "muiRpaneRight",
+        "description": "Create a new ResizablePane with a right-resizable side",
+        "body": [
+            "ResizablePane(",
+            "  minWidth: ${1:180},",
+            "  startWidth: ${2:200},",
+            "  resizableSide: ResizableSide.right,",
+            "  builder: (context, paneScrollController) {",
+            "    return ${3:const SizedBox.shrink();}",
+            "  },",
+            "),"
+        ]
+    },
+    "Create a new ResizablePane with a left-resizable side": {
+        "prefix": "muiRpaneLeft",
+        "description": "Create a new ResizablePane with a left-resizable side",
+        "body": [
+            "ResizablePane(",
+            "  minWidth: ${1:180},",
+            "  startWidth: ${2:200},",
+            "  resizableSide: ResizableSide.left,",
+            "  builder: (context, paneScrollController) {",
+            "    return ${3:const SizedBox.shrink();}",
+            "  },",
+            "),"
+        ]
+    },
+    "Create a ToolBar": {
+        "prefix": "muiToolbar",
+        "description": "Create a new ToolBar",
+        "body": [
+            "ToolBar(",
+            "  title: ${1:},",
+            "),"
+        ]
+    },
+    "Create a MacosListTile": {
+        "prefix": "muitile",
+        "description": "Create a new MacosListTile",
+        "body": [
+            "MacosListTile(",
+            "  title: ${1:},",
+            "),"
+        ]
+    },
+    "Create a MacosIconButton": {
+        "prefix": "muiIconButton",
+        "description": "Create a new MacosIconButton",
+        "body": [
+            "MacosIconButton(",
+            "  icon: MacosIcon(${1:}),",
+            "  onPressed: () {},",
+            "),"
+        ]
+    },
+    "Create a MacosIconButton with an async callback": {
+        "prefix": "muiIconButtonAsync",
+        "description": "Create a new MacosIconButton with an async callback",
+        "body": [
+            "MacosIconButton(",
+            "  icon: MacosIcon(${1:}),",
+            "  onPressed: () async {},",
+            "),"
+        ]
+    },
+    "Show a MacosAlertDialog": {
+        "prefix": "muiAlertDialog",
+        "description": "Show a MacosAlertDialog",
+        "body": [
+            "showMacosAlertDialog(",
+            "  context,",
+            "  builder: (context) => MacosAlertDialog(",
+            "    appIcon: ${1:},",
+            "    title: Text('${2:}'),",
+            "    message: Text('${3:}'),",
+            "    primaryButton: PushButton(",
+            "      buttonSize: ButtonSize.large,",
+            "      child: Text('${4:}'),",
+            "      onPressed: () {},",
+            "    ),",
+            "  ),",
+            ");"
+        ]
+    },
+    "Return a centered loading indicator": {
+        "prefix": "rmuiload",
+        "description": "Return a centered MacosProgressCircle",
+        "body": [
+            "return const Center(",
+            "  child: ProgressCircle(),",
+            ");"
+        ],
+    },
+    "Create a macos_ui widget test": {
+        "prefix": "muitest",
+        "description": "Create a new macos_ui widget test",
+        "body": [
+            "import 'package:flutter_test/flutter_test.dart';",
+            "import 'package:macos_ui/macos_ui.dart';",
+            "import 'package:macos_ui/src/library.dart';",
+            "",
+            "void main() {",
+            "  group('${1:} tests', () {",
+            "    testWidgets(",
+            "      '${2:}',",
+            "      (tester) async {",
+            "        await tester.pumpWidget(",
+            "          MacosApp(",
+            "            home: MacosWindow(",
+            "              child: MacosScaffold(",
+            "                children: [",
+            "                  ContentArea(",
+            "                    builder: (context, scrollController) {",
+            "                      return ${3:};",
+            "                    },",
+            "                  ),",
+            "                ],",
+            "              ),",
+            "            ),",
+            "          ),",
+            "        );",
+            "",
+            "        final widget = find.byType(${1:});",
+            "        expect(widget, findsOneWidget);",
+            "      },",
+            "    );",
+            "  });",
+            "}"
+        ]
+    }
+}
