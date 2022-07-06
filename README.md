@@ -2,6 +2,9 @@
 
 A VSCode extension that provides Flutter snippets for faster development with macos_ui.
 
+## How to use
+This extension is not yet published to the VSC extension marketplace. In order to use it in your VSC, you'll need to clone this repo and copy the contents to `~/.vscode/extensions`. Reload VSC, and the extension should appear.
+
 ## Snippets
 
 * `imui`: Imports `macos_ui`
